@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(../img/pexels-pixabay-206359.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: 2s;
+        }
+        body:hover {
+            color: rgb(0, 78, 187);
+            background-image: url(../CSS0/img.C/bg2.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        legend {
+            text-align: center;
+            text-transform: uppercase;
+            color: rgb(237, 250, 97);
+            animation: rotate 1.4s ease 1.5s;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        form {
+            width: 50%;
+            margin: 200px auto;
+        }
+
+        label {
+            color: rgb(173, 243, 98);
+        }
+
+        form input {
+            padding: 5px;
+            color: rgb(176, 9, 123);
+        }
+
+        .submit input    {
+            background-color: rgb(255, 72, 0);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 95%;
+        }
+
+        .submit:hover {
+            opacity: 0.8;
+        }
+
+        #Time1 {
+            display: none;
+        }
+
+        #Slot1 {
+            display: none;
+        }
+
+        span {
+            color: chartreuse;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="post" onsubmit="return validForm()">
+        <fieldset>
+            <legend><b>restaurant booking</b></legend>
+
+            <table cellspacing="15px" border="0">
+                <tr>
+                    <td><label for="booking"> Choice of booking :- </label></td>
+                    <td>
+                        <select name="" id="booking" onclick="select()">
+                            <option value="0">Choice of booking</option>
+                            <option value="1">Full day booking</option>
+                            <option value="2">Half day booking</option>
+                            <option value="3">Hourly booking</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="user">User name :-</label></td>
+                    <td><input id="user" type="text" class="thisrequired" placeholder="User name"
+                            onblur="checkreq(this)" required></td>
+                </tr>
+                <tr>
+                    <td class=""><label for="mobile">Mobile Number :-</label></td>
+                    <td><input id="mobile" type="tel" class="thisrequired" placeholder="Mobile Number" pattern="[0-9]+"
+                            minlength="10" maxlength="10" onblur="checkreq(this)" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email :-</label></td>
+                    <td><input id="email" type="email" class="thisrequired" placeholder="Email" onblur="checkreq(this)"
+                            required></td>
+                </tr>
+                <tr>
+                    <td><label for="person">No of person :-</label></td>
+                    <td><input id="person" type="text" class="thisrequired" placeholder="No of person"
+                            onblur="checkreq(this)" required></td>
+                </tr>
+                <tr>
+                    <td><label for="date">Date :-</label></td>
+                    <td><input id="date" type="date" class="thisrequired" onblur="checkreq(this)" required></td>
+                </tr>
+                <tr>
+                    <td id="Slot1"><label for="slot">Slot :-</label>
+                        <select name="" id="Slot">
+                            <option value="0">select</option>
+                            <option value="1">Breakfast</option>
+                            <option value="2">Lunch</option>
+                            <option value="3">Dinner</option>
+                        </select>
+                    </td>
+                </tr>
+                <p id="slot"></p>
+                <tr>
+                    <td id="Time1"><label for="time">Time :-</label>
+                        <input type="time" id="time" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="submit"><input type="submit"></td>
+                </tr>
+        </fieldset>
+        </table>
+    </form>
+
+    <script src="restaurant_booking.js"></script>
+
+
+
+</body>
+
+</html>
