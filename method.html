@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //Method : Function inside object
+
+
+        const person = {
+            firstName: "dhyansh",
+            age: "15 days",
+            about: function () {
+                console.log(`Person name is ${this.firstName} and age is ${this.age}`);   // calling of firstName and age are same
+            }
+        };
+        // console.log(person.about);
+        person.about();
+
+
+        // const personInfo = () => console.log(`Person name is ${this.firstName} and age is ${this.age}`);
+        function personInfo() {
+            console.log(`Person name is ${this.firstName} and age is ${this.age}`);
+        }
+
+        const person1 = {
+            firstName: "Darshit",
+            age: 22,
+            about: personInfo,
+        }
+        const person2 = {
+            firstName: "Mihir",
+            age: 28,
+            about: personInfo,
+        }
+        const person3 = {
+            firstName: "Dayala",
+            age: 00,
+            about: personInfo,
+        }
+
+        person1.about();
+        person2.about();
+        person3.about();
+
+
+    </script>
+</body>
+
+</html>
